@@ -132,3 +132,15 @@ button {
   padding: 0.4rem 0.9rem;
   text-align: center;
 }
+
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.card-footer {
+  margin-top: auto;
+}
