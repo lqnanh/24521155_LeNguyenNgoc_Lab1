@@ -92,3 +92,26 @@
 - T-03B: Live data state (Flexbox badges + Grid list)
 - T-03C: Empty & Error states, with an accessible "Retry" button
 - T-03D: State controller (JS) to manage the 4 states
+
+
+## HW1: Production Portfolio
+
+### M1: WCAG 2.2 AA audit
+- Contract: contrast >= 4.5:1 (text), >= 3:1 (UI) in both themes; landmarks complete; 0 axe violations
+- Verify: axe DevTools + Lighthouse Accessibility
+- Commit: fix(a11y): contrast & landmarks
+
+### M2: Focus trap audit
+- Contract: Tab/Shift+Tab traverses the whole page; no keyboard trap; visible focus; skip-link works
+- Verify: manual keyboard-only test
+- Commit: fix(nav): keyboard trap prevention
+
+### M3: Strict CSP & zero inline handlers
+- Contract: 0 inline handlers, 0 inline style, 0 inline script, 0 CSP errors in Console
+- Verify: grep + Console
+- Commit: feat(sec): strict CSP, remove inline handlers
+
+### M4: Lighthouse 100
+- Contract: Performance, Accessibility, Best Practices, SEO all 100 (mobile)
+- Verify: Lighthouse report (before/after screenshots in hw1/docs/)
+- Commit: perf: optimize assets
