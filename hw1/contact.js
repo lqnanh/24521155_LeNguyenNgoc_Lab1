@@ -15,3 +15,18 @@ form.addEventListener('submit', (event) => {
   status.textContent = `Thank you, ${nameInput.value.trim()}. Your message was recorded.`;
   form.reset();
 });
+
+function setError(input, message) {
+  const id = `${input.id}-error`;
+  let el = document.getElementById(id);
+  if (!el) {
+    el = document.createElement('p');
+    el.id = id;
+    el.className = 'field-error';
+    input.insertAdjacentElement('afterend', el);
+  }
+  el.textContent = message;                   
+  input.setAttribute('aria-invalid', 'true');
+  const ids = (input.getAttribute('aria-describedby') || '').split(' ').filter(Boolean);
+  if (!ids.includes(id)) input.setAttribute('aria-describedby', [...ids, id].join(' '));
+}
