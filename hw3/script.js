@@ -31,7 +31,7 @@ const form = document.querySelector('#signup-form');
 const submitBtn = document.querySelector('#signup-submit');
 const statusEl = document.querySelector('#signup-status');
 
-let state = 'idle'; // 'idle' | 'submitting' | 'success' | 'error'
+let state = 'idle'; 
 
 const MESSAGES = {
   idle: '',
@@ -47,7 +47,6 @@ function setState(next) {
   statusEl.textContent = MESSAGES[next];
 }
 
-// Giả lập server: 50% thành công
 function sendRegistration(data) {
   return new Promise((resolve, reject) => {
     setTimeout(() => (Math.random() > 0.5 ? resolve(data) : reject(new Error('fail'))), 1200);
@@ -56,10 +55,14 @@ function sendRegistration(data) {
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  if (state === 'submitting') return;      // chặn double-submit
   if (!form.reportValidity()) return;
+
+  const name = form.elements.name.value.trim();
   setState('submitting');
   try {
     await sendRegistration(new FormData(form));
+    statusEl.textContent = `Thanks, ${name}! You are registered.`; // textContent => an toàn XSS
     setState('success');
     form.reset();
   } catch {
