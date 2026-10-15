@@ -11,7 +11,10 @@
    <header>
      <a href="#main-content" class="skip-link">Skip to main content</a>
      <h1>Nguyen Ngoc, Lead Engineer</h1>
-     <button type="button" id="theme-btn" aria-pressed="false">Dark mode</button>
+    <button type="button" id="theme-btn" aria-pressed="false">
+      <span aria-hidden="true" id="theme-icon">🌙</span>
+      <span id="theme-label">Dark mode</span>
+    </button>
    </header>
 
 
@@ -19,6 +22,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
     </ul>
   </nav>
 
@@ -38,6 +42,17 @@
       <h2 id="about-title">About</h2>
       <p>Short introduction goes here.</p>
     </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+  <h2 id="skills-title">Skills</h2>
+  <ul class="skills-grid">
+    <li class="badge" data-category="frontend">HTML</li>
+    <li class="badge" data-category="frontend">CSS</li>
+    <li class="badge" data-category="frontend">JavaScript</li>
+    <li class="badge" data-category="tools">Git</li>
+    <li class="badge" data-category="tools">Lighthouse</li>
+  </ul>
+</section>
 
     <section id="projects" aria-labelledby="projects-title">
      <h2 id="projects-title">Projects</h2>
