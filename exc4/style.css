@@ -197,3 +197,32 @@ button {
 #repo-list[data-state="loading"] .skeleton-list {
   display: grid;
 }
+
+/* ---------- Live data (state: success) ---------- */
+#repo-list[data-state="success"] .repo-grid {
+  display: grid;
+}
+
+.repo-grid {
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 1rem;
+}
+
+.repo-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.repo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
