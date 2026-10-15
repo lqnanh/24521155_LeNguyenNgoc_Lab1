@@ -115,3 +115,13 @@
 - Contract: Performance, Accessibility, Best Practices, SEO all 100 (mobile)
 - Verify: Lighthouse report (before/after screenshots in hw1/docs/)
 - Commit: perf: optimize assets
+
+## HW2: Drum Kit Engine
+
+Five atomic tasks, each prompted to the AI and committed separately.
+
+- T-H2-01 (HTML contract):** each pad declares `data-key` and `data-sound`. No JS. Verify in DevTools > Elements: both attributes present, every `data-key` unique.
+- T-H2-02 (Audio engine):** standalone `playSound(src)`, independent of the DOM, one playback instance per call. Verify in the Console: repeated calls overlap.
+- T-H2-03 (Keydown listener):** `keydown` + `e.key`, ignore `e.repeat`, look up the pad via `data-key`. No switch-case, no `keyCode`. Verify: holding a key plays one sound.
+- T-H2-04 (FIFO recorder):** queue of `{ key, t }` with `t` relative to the recording start, replayed from an absolute start time to avoid drift. Verify: log the queue and check playback rhythm.
+- T-H2-05 (Responsive CSS):** Grid with `repeat(auto-fit, minmax(...))`, colors from `:root` variables. Verify at 375px: no horizontal scroll.
