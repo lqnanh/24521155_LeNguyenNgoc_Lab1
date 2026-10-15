@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register for the Web Dev Summit and watch the live countdown.">
+  <title>Web Dev Summit 2026</title>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>Web Dev Summit 2026</h1>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section aria-labelledby="countdown-title">
+      <h2 id="countdown-title">Event starts in</h2>
+      <p id="countdown" role="timer" aria-label="Time until the event">
+        <span><span id="cd-days">--</span> days</span>
+        <span><span id="cd-hours">--</span> hours</span>
+        <span><span id="cd-minutes">--</span> minutes</span>
+        <span><span id="cd-seconds">--</span> seconds</span>
+      </p>
+      <p id="countdown-note">
+        Starts at <time id="event-time" datetime="2026-12-31T17:00:00Z">31 Dec 2026, 17:00 UTC</time>
+      </p>
+    </section>
+
+    <section aria-labelledby="signup-title">
+      <h2 id="signup-title">Register</h2>
+      <form id="signup-form" data-state="idle" novalidate>
+        <p>
+          <label for="signup-name">Full name</label><br>
+          <input type="text" id="signup-name" name="name" required minlength="2" maxlength="80" autocomplete="name">
+        </p>
+        <p>
+          <label for="signup-email">Email</label><br>
+          <input type="email" id="signup-email" name="email" required maxlength="120" autocomplete="email">
+        </p>
+        <button type="submit" id="signup-submit">Register</button>
+        <p id="signup-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Web Dev Summit</p>
+  </footer>
+</body>
+</html>
