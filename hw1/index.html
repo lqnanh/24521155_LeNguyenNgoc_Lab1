@@ -9,35 +9,32 @@
     <script src="contact.js" defer></script>
 </head>
 <body>
-   <header>
-     <a href="#main-content" class="skip-link">Skip to main content</a>
-     <h1>Nguyen Ngoc, Lead Engineer</h1>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>Nguyen Ngoc, Lead Engineer</h1>
     <button type="button" id="theme-btn" aria-pressed="false">
       <span aria-hidden="true" id="theme-icon">🌙</span>
-      <span id="theme-label">Dark mode</span>
+      <span>Dark mode</span>   <!-- nhãn cố định, chỉ đổi aria-pressed + icon -->
     </button>
-   </header>
-
+  </header>
 
   <nav aria-label="Primary">
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-
-  <main id="main-content">
-     <section id="hero" aria-labelledby="hero-title">
-    <img
-      src="avt.webp"
-      alt="Portrait of Nguyen Ngoc"
-      width="400"
-      height="400"
-      decoding="async"
-      fetchpriority="high">
-  </section>
+  <main id="main-content" tabindex="-1">
+    <section id="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">I build fast, accessible web apps</h2>
+      <p>One-sentence pitch about what you do.</p>
+      <img src="avt.webp" alt="Portrait of Nguyen Ngoc" width="400" height="400"
+           decoding="async" fetchpriority="high">
+    </section>
 
     <section id="about" aria-labelledby="about-title">
       <h2 id="about-title">About</h2>
