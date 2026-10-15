@@ -1,0 +1,12 @@
+## T-01: Semantic DOM landmarks
+- Description: Build the page structure using semantic HTML elements.
+- Contract:
+  - Use 0 <div> elements
+  - Use exactly one <h1> element.
+  - The skip link must be the first focusable element, and its href must match the id of the <main> element.
+  - Include the following landmarks: <header>, <nav>, <main>, and <footer>.
+- Verify:
+  - Open DevTools → Accessibility and verify that all required landmarks are present.
+  - Press Tab to verify that the skip link receives focus first, then press Enter to navigate to the main content.
+  - Search for "<div" in index.html and verify that there are zero results.
+- Commit: feat(html): semantic landmark tree
