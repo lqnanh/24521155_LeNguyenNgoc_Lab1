@@ -7,6 +7,8 @@
 
 /* ---------- Design tokens (nơi DUY NHẤT được có mã hex) ---------- */
 :root {
+  --skeleton-base: #e2e8f0;
+  --skeleton-shine: #cbd5e1;
   --bg-primary: #ffffff;
   --text-primary: #0f172a;
   --accent: #0369a1;
@@ -16,6 +18,8 @@
 }
 
 :root[data-theme="dark"] {
+  --skeleton-base: #1e293b;
+  --skeleton-shine: #334155;
   --bg-primary: #0f172a;
   --text-primary: #f8fafc;
   --accent: #38bdf8;
@@ -159,4 +163,37 @@ button {
 
 #contact-form input:invalid:not(:placeholder-shown) {
   border-color: var(--accent);
+}
+
+.skeleton-list {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.skeleton-item {
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(90deg,
+    var(--skeleton-base) 25%,
+    var(--skeleton-shine) 50%,
+    var(--skeleton-base) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-item { animation: none; }
+}
+.skeleton-list, .repo-grid, .state-empty, .state-error, .state-action {
+  display: none;
+}
+
+#repo-list[data-state="loading"] .skeleton-list {
+  display: grid;
 }
