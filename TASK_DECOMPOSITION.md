@@ -69,3 +69,26 @@
 - submitting -> error
 - success -> idle (when the user types again)
 - error -> idle (when the user types again)
+
+
+## Exercise 4: Resilient Component Architecture
+
+### Contract
+- Container: `<section id="repo-list" data-state="loading|success|empty|error">`
+- CSS: Visibility of each section is controlled exclusively by the `data-state` attribute.
+- JS: Must only update the `data-state` and populate content using `textContent` (use of `innerHTML` is prohibited).
+- Constraints: No hex color codes outside of `:root`; zero `<div>` elements; no horizontal scrolling at a 375px viewport width.
+
+### State Machine
+- `loading` -> `success` (data received)
+- `loading` -> `empty` (empty array)
+- `loading` -> `error` (request failed)
+- `error` -> `loading` (via "Retry" action)
+- `empty` -> `loading` (via "Reload" action)
+- `success` -> `loading` (refresh)
+
+### Sub-tasks
+- T-03A: Loading skeleton (pure CSS shimmer effect)
+- T-03B: Live data state (Flexbox badges + Grid list)
+- T-03C: Empty & Error states, with an accessible "Retry" button
+- T-03D: State controller (JS) to manage the 4 states

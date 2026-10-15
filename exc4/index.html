@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="theme.js" defer></script>
+    <script src="contact.js" defer></script>
+    <script src="repos.js" defer></script>
+</head>
+<body>
+   <header>
+     <a href="#main-content" class="skip-link">Skip to main content</a>
+     <h1>Nguyen Ngoc, Lead Engineer</h1>
+    <button type="button" id="theme-btn" aria-pressed="false">
+      <span aria-hidden="true" id="theme-icon">🌙</span>
+      <span id="theme-label">Dark mode</span>
+    </button>
+   </header>
+
+
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <main id="main-content">
+
+
+    
+
+     <section id="hero" aria-labelledby="hero-title">
+    <img
+      src="avt.webp"
+      alt="Portrait of Nguyen Ngoc"
+      width="400"
+      height="400"
+      decoding="async"
+      fetchpriority="high">
+  </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <p>Short introduction goes here.</p>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+  <h2 id="skills-title">Skills</h2>
+  <ul class="skills-grid">
+    <li class="badge" data-category="frontend">HTML</li>
+    <li class="badge" data-category="frontend">CSS</li>
+    <li class="badge" data-category="frontend">JavaScript</li>
+    <li class="badge" data-category="tools">Git</li>
+    <li class="badge" data-category="tools">Lighthouse</li>
+  </ul>
+</section>
+  <section id="projects" aria-labelledby="projects-title">
+    <h2 id="projects-title">Projects</h2>
+    <ul class="project-grid">
+      <li>
+        <article class="project-card" data-category="frontend">
+          <header class="card-header">
+            <h3>Project One</h3>
+            <span class="badge">JavaScript</span>
+          </header>
+          <p>Short description.</p>
+          <footer class="card-footer">
+            <a href="#" aria-label="Source code for Project One">Source Code</a>
+          </footer>
+        </article>
+      </li>
+
+      <li>
+        <article class="project-card" data-category="frontend">
+          <header class="card-header">
+            <h3>Project Two</h3>
+            <span class="badge">CSS</span>
+          </header>
+          <p>Short description.</p>
+          <footer class="card-footer">
+            <a href="#" aria-label="Source code for Project Two">Source Code</a>
+          </footer>
+        </article>
+      </li>
+
+      <li>
+        <article class="project-card" data-category="backend">
+          <header class="card-header">
+            <h3>Project Three</h3>
+            <span class="badge">Node.js</span>
+          </header>
+          <p>Short description.</p>
+          <footer class="card-footer">
+            <a href="#" aria-label="Source code for Project Three">Source Code</a>
+          </footer>
+        </article>
+      </li>
+    </ul>
+  </section>
+
+
+  <section id="contact" aria-labelledby="contact-title">
+  <h2 id="contact-title">Contact</h2>
+  <form id="contact-form" novalidate>
+    <p>
+      <label for="contact-name">Full name</label><br>
+      <input type="text" id="contact-name" name="name" required minlength="3"
+             autocomplete="name" aria-describedby="name-hint">
+    </p>
+    <p id="name-hint">At least 3 characters.</p>
+
+    <p>
+      <label for="contact-email">Email</label><br>
+      <input type="email" id="contact-email" name="email" required autocomplete="email">
+    </p>
+
+    <p>
+      <label for="contact-message">Message</label><br>
+      <textarea id="contact-message" name="message" rows="4" required minlength="10"></textarea>
+    </p>
+
+    <button type="submit">Send message</button>
+    <p id="form-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+
+  <section id="repo-list" aria-labelledby="repos-title" data-state="loading" aria-busy="true">
+    <h2 id="repos-title">Repositories</h2>
+
+    <ul class="skeleton-list" aria-hidden="true">
+      <li class="skeleton-item"></li>
+      <li class="skeleton-item"></li>
+      <li class="skeleton-item"></li>
+    </ul>
+
+    <ul class="repo-grid" id="repo-items"></ul>
+
+    <p class="state-empty" role="status">No repositories yet.</p>
+
+    <p class="state-error" role="alert">Could not load repositories.</p>
+
+    <button type="button" id="retry-btn" class="state-action">Retry</button>
+  </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Nguyen Ngoc</p>
+  </footer>
+</body>
+</html>
