@@ -144,3 +144,19 @@ button {
 .card-footer {
   margin-top: auto;
 }
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  max-width: 32rem;
+  font: inherit;
+  padding: 0.5rem;
+  color: var(--text-primary);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+#contact-form input:invalid:not(:placeholder-shown) {
+  border-color: var(--accent);
+}
