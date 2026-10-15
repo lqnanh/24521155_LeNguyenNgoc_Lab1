@@ -41,3 +41,54 @@ a { color: var(--accent); }
   outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
+
+/* ---------- Layout ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 1.25rem;
+  padding: 0 1.5rem;
+}
+
+main {
+  padding: 1.5rem;
+}
+
+section + section {
+  margin-top: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 1.5rem 0;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+button {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
