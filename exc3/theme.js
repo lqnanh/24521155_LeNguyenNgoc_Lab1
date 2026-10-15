@@ -1,11 +1,12 @@
 const root = document.documentElement;
 const btn = document.querySelector('#theme-btn');
+const icon = document.querySelector('#theme-icon');
 
 function applyTheme(theme) {
   const isDark = theme === 'dark';
   root.dataset.theme = theme;
   btn.setAttribute('aria-pressed', String(isDark));
-  btn.textContent = isDark ? 'Light mode' : 'Dark mode';
+  icon.textContent = isDark ? '☀️' : '🌙';
 }
 
 function getInitialTheme() {
