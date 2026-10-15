@@ -1,0 +1,46 @@
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --accent: #0369a1;
+  --on-accent: #ffffff;
+  --card-bg: #f8fafc;
+  --border: #94a3b8;
+  --success: #166534;
+  --error: #b91c1c;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { color-scheme: light dark; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header, main, footer { padding: 1rem 1.5rem; }
+section + section { margin-top: 2rem; }
+
+.skip-link { position: absolute; left: 1rem; top: -3rem; padding: 0.5rem 1rem;
+  background: var(--accent); color: var(--on-accent); }
+.skip-link:focus { top: 1rem; }
+
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+main:focus { outline: none; }
+
+#countdown { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 1.25rem; }
+
+input { width: 100%; max-width: 28rem; font: inherit; padding: 0.5rem;
+  color: var(--text); background: var(--card-bg);
+  border: 1px solid var(--border); border-radius: 6px; }
+
+button { font: inherit; min-height: 44px; padding: 0.5rem 1.25rem;
+  background: var(--accent); color: var(--on-accent);
+  border: 0; border-radius: 6px; cursor: pointer; }
+
+button[aria-disabled="true"] { opacity: 0.6; cursor: not-allowed; }
+
+#signup-form[data-state="success"] #signup-status { color: var(--success); }
+#signup-form[data-state="error"] #signup-status { color: var(--error); }
