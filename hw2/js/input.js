@@ -1,9 +1,11 @@
 import { playSound, stopAll } from './audio-engine.js';
+import { recordHit } from './recorder.js';
 
 export function playPad(key) {
   const pad = document.querySelector(`.drum-pad[data-key="${key.toLowerCase()}"]`);
   if (!pad) return;
   playSound(pad.dataset.sound);
+  recordHit(key);
   pad.classList.add('active');
   setTimeout(() => pad.classList.remove('active'), 100);
 }
