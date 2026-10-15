@@ -22,13 +22,18 @@
   <nav aria-label="Primary">
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
 
   <main id="main-content">
+
+
+    
+
      <section id="hero" aria-labelledby="hero-title">
     <img
       src="avt.webp"
@@ -123,6 +128,25 @@
     <p id="form-status" role="status" aria-live="polite"></p>
   </form>
 </section>
+
+
+  <section id="repo-list" aria-labelledby="repos-title" data-state="loading" aria-busy="true">
+    <h2 id="repos-title">Repositories</h2>
+
+    <ul class="skeleton-list" aria-hidden="true">
+      <li class="skeleton-item"></li>
+      <li class="skeleton-item"></li>
+      <li class="skeleton-item"></li>
+    </ul>
+
+    <ul class="repo-grid" id="repo-items"></ul>
+
+    <p class="state-empty" role="status">No repositories yet.</p>
+
+    <p class="state-error" role="alert">Could not load repositories.</p>
+
+    <button type="button" id="retry-btn" class="state-action">Retry</button>
+  </section>
   </main>
 
   <footer>
