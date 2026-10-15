@@ -125,3 +125,19 @@ Five atomic tasks, each prompted to the AI and committed separately.
 - T-H2-03 (Keydown listener):** `keydown` + `e.key`, ignore `e.repeat`, look up the pad via `data-key`. No switch-case, no `keyCode`. Verify: holding a key plays one sound.
 - T-H2-04 (FIFO recorder):** queue of `{ key, t }` with `t` relative to the recording start, replayed from an absolute start time to avoid drift. Verify: log the queue and check playback rhythm.
 - T-H2-05 (Responsive CSS):** Grid with `repeat(auto-fit, minmax(...))`, colors from `:root` variables. Verify at 375px: no horizontal scroll.
+
+## HW3: Resilient Event Hub
+
+### Contract
+- Event time: constant ISO 8601 UTC string, e.g. "2026-12-31T17:00:00Z" (must end with Z)
+- Countdown computes remaining = target - Date.now() on EVERY tick (no decrement counters)
+- Timer is cleared when remaining reaches 0
+- Form: <form id="signup-form" data-state="idle|submitting|success|error">
+- Transitions: idle->submitting, submitting->success, submitting->error, success->idle, error->idle (when the user types again)
+- Submit while state != idle is ignored (double-submit guard)
+- All user-provided text is rendered with textContent only (no innerHTML)
+
+### Slices
+- S1: Drift-free countdown
+- S2: Form state machine
+- S3: Double-submit prevention & input sanitization
