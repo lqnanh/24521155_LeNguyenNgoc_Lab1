@@ -92,3 +92,14 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: -4rem;  
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 6px;
+}
+.skip-link:focus { inset-block-start: 1rem; }
