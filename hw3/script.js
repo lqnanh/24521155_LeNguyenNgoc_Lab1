@@ -26,3 +26,43 @@ function tick() {
 
 tick();
 timerId = setInterval(tick, 1000);
+
+const form = document.querySelector('#signup-form');
+const submitBtn = document.querySelector('#signup-submit');
+const statusEl = document.querySelector('#signup-status');
+
+let state = 'idle'; // 'idle' | 'submitting' | 'success' | 'error'
+
+const MESSAGES = {
+  idle: '',
+  submitting: 'Submitting...',
+  success: 'Registration successful!',
+  error: 'Something went wrong. Please try again.',
+};
+
+function setState(next) {
+  state = next;
+  form.dataset.state = next;
+  submitBtn.disabled = next === 'submitting';
+  statusEl.textContent = MESSAGES[next];
+}
+
+// Giả lập server: 50% thành công
+function sendRegistration(data) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => (Math.random() > 0.5 ? resolve(data) : reject(new Error('fail'))), 1200);
+  });
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (!form.reportValidity()) return;
+  setState('submitting');
+  try {
+    await sendRegistration(new FormData(form));
+    setState('success');
+    form.reset();
+  } catch {
+    setState('error');
+  }
+});
