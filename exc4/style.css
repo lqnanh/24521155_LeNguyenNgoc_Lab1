@@ -226,3 +226,21 @@ button {
   gap: 0.5rem;
   list-style: none;
 }
+
+/* ---------- Empty & Error ---------- */
+#repo-list[data-state="empty"] .state-empty,
+#repo-list[data-state="error"] .state-error {
+  display: block;
+}
+
+#repo-list[data-state="empty"] .state-action,
+#repo-list[data-state="error"] .state-action {
+  display: inline-block;
+}
+
+.state-empty,
+.state-error {
+  padding: 1rem;
+  border: 1px dashed var(--border-color);
+  border-radius: 8px;
+}
